@@ -3,9 +3,16 @@ package edu.unimagdalena.lms.repositories;
 import edu.unimagdalena.lms.entities.Instructor;
 import org.springframework.data.jpa.repository.JpaRepository;
 
+import java.util.List;
+import java.util.Optional;
+
 public interface InstructorRepository extends JpaRepository<Instructor, Long> {
 
-    Instructor findById(long id);
-    Instructor findByEmail(String email);
-    Instructor findByFullName(String name);
+    Optional<Instructor> findByEmail(String email);
+
+    List<Instructor> findByFullNameContainingIgnoreCase(String fullName);
+
+    boolean existsByEmail(String email);
+
+    List<Instructor> findAllByOrderByFullNameAsc();
 }
