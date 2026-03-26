@@ -15,4 +15,6 @@ public interface InstructorRepository extends JpaRepository<Instructor, Long> {
     boolean existsByEmail(String email);
 
     List<Instructor> findAllByOrderByFullNameAsc();
+
+    Long id(Long id);
 }

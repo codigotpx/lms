@@ -23,7 +23,7 @@ public class Instructor {
 
     @Column(name = "full_name")
     private String fullName;
-
+    
     @Column(name = "created_at")
     private Instant createdAt;
 
